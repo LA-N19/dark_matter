@@ -1,0 +1,29 @@
+ Datentr„ger in Laufwerk D: ist Volume
+ Volumeseriennummer: 5A84-44C9
+
+ Verzeichnis von D:\LA-N19\dark_matter\dm
+
+24.12.2023  16:51    <DIR>          .
+24.12.2023  16:51    <DIR>          ..
+24.12.2023  16:51                13 dir.bat
+24.12.2023  16:51                 0 dir.txt
+01.12.2021  23:39            10.872 dm01_awakening_v02.rb
+24.11.2021  23:46             8.614 dm02_engine_room_v01.rb
+02.12.2021  00:05            12.754 dm03_harmony_swarm_v01.rb
+24.12.2023  16:32            14.783 dm04_night_train.rb
+02.12.2021  00:33            12.857 dm05_pentatiano_v07.rb
+04.12.2021  12:27            10.636 dm06_cheater chord invasion v6.rb
+04.12.2021  11:50             9.757 dm07_bug is raisin v3.rb
+24.12.2023  10:27             8.830 dm08_hal9k_v2.rb
+02.12.2021  07:09             6.280 dm09_dark_kick.rb
+20.11.2023  00:09             3.553 dm33_Inst_v01.rb
+28.11.2023  21:17            13.871 dm33_I_own_U_v05.rb
+24.12.2023  16:38             1.954 dm_main.rb
+24.12.2023  16:48             7.247 dm_titles.rb
+24.12.2023  10:15    <DIR>          flac_hal9k
+24.12.2023  11:36    <DIR>          flac_titles
+24.12.2023  10:44    <DIR>          txt_out
+24.12.2023  16:18    <DIR>          txt_rec
+24.12.2023  10:23    <DIR>          wav_dm33
+              15 Datei(en),        122.021 Bytes
+               7 Verzeichnis(se), 641.878.257.664 Bytes frei

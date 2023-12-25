@@ -4,32 +4,34 @@ L.A. N19 / daniel mueller / 10.07.2021
 '
 file=$file #'d:/LA-N19/dv.txt'
 use_bpm 60
-s = $s
+m = $m; s = $s
 
 
 #https://freetts.com/#ads / Matthew_Male
 
-scene = [
-  "dark matter odessey",
-  "prelude",
-  "the awakening",
-  "engine room",
-  "harmony swarm",
-  "pentatiano",
-  "cheater chord inversion",
-  "bug is growing",
-  "hal9k",
-  "dark void space folding"
-]
+scenes = {
+  "scene-1": "dark matter(s) odessey",
+  "scene-2": "prelude",
+  "scene1": "the awakening",
+  "scene2": "engine room",
+  "scene3": "night train",
+  "scene4": "harmony swarm",
+  "scene5": "pentatiano",
+  "scene6": "cheater chord inversion",
+  "scene7": "bug is growing",
+  "scene8": "hal9k",
+  "scene9": "dark void space folding",
+  "scene10": "I own U"
+}
 
 
-txt_en = [
-"""
+txt_en = {
+  "scene-1": """
 a lonely travel of humanity onto dark
 
 sonicpi-lowFi/sciFi-movie by L.A. N19 
 """,
-"""
+  "scene-2": """
 the earth is almost destroyed by humanity
 and a so-called elite has colonized mars,
 because a pale person said: that would be an outstanding idea.
@@ -46,8 +48,7 @@ meant that it was a great idea.
 But: The pale A.I. just liked the name of the planet.
 """,
  
-
-"""
+  "scene1": """
 Whatever the case, on the several years long journey with the giant spaceship 
 C.O.C.K. (Common Odessey Carriage Kollosom),
 which lasts so long that newer spaceships are built in the meantime, 
@@ -56,27 +57,32 @@ something bad happens and the pale A.I. tries to wake-up the passengers.
 
 That's when the story of Dave begins. 
 """,
-
-"""
+  "scene2": """
 Dave has been resuscitated to fix the 
 fusion powered space folding engine 
 and he immediatly got to work and
 hopefully got it fixed.
 """,
+  "scene3": """
+after a hard engineer working day dave is very tired,
+but even he's very exosted he could'nt sleep after this hard and long day.
+So he count trains as he know them from historic documentation.
+""",
 
-"""
+  "scene4": """
 the space ship is switched to generous autopilot drive mode 
 and start dancing around asteroids.
 
 SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!!!
 """,
 
-""" 
+"scene5": """ 
 meanwhile dave has become boring and lonely and 
 he has started to learn electric piano.
 
 Let's see how far he's come.
 """,
+  "scene6": 
 """
 while the journey goes on and on dave found a old lp
 from the intpreter L.A. N19 covering adam cheater
@@ -84,21 +90,79 @@ with the song cheater chord inversion from the early 21th century.
 
 Let's hear how this old songs sound like.
 """,
-"""
+
+"scene7":  """
 something is happening... with the pale A.I.
 something is going weird
 
 Dave should look at the computer
 """,
-"""
+"scene8": """
 the bug is raised and it seems like it will take over the space ship
 and dave tries to bring himself to safety.
 """,
-"""
+"scene9": """
 after dave short-circuit the space folding drive time and space
 began to collapse and got shuffle 
 """,
-]
+"scene10": "I own U"
+}
+
+logos = { "scene1": "
+°               °      °           .                °     °                °           .             +            *       +
+                     ______                                                                                                  
+*                   / ___  \                                                                                                                                                          
+      *            / /__//  \/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/   
+.                 /..:       o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o   
+*                 \ ______  _______________________________________________________________________________________________________________________________________________________   
+       °           \ \|_|/ /\/\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/   
+ .                  \_____/                                                                                                                                                           
+    °      .            °             *          °          °                   .     +            .                °      .           .             °        +         .            
+ +             °          °                *          *         .  "
+}
+
+
+songs = "dm_Asd.rb
+dm01_awakening_v02.rb
+dm02_engine_room_v01.rb
+dm03_harmony_swarm_v01.rb
+dm04_night_train.rb
+dm05_pentatiano_v07.rb
+dm06_cheater_chord_invasion v6.rb
+dm07_bug_is_raisin_v3.rb
+dm08_hal9k_v2.rb
+dm09_dark_kick.rb
+dm10_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ").rjust(30, "_") } 
+
+scene = "scene"+s.to_s
+
+# https://patorjk.com/software/taag/#p=testall&f=Graffiti&t=dark%20matter(s) / font: Bigfig
+
+
+if $m == 1 then
+  if s > 0 then
+    cov = ("
+                             _| _  __ |    __  _ _|__|_ _  __  | _    
+    ██          █████       (_|(_| |  |<   |||(_| |_ |_(/_ |    _>              
+    ██         ██   ██      
+    ██         ███████      
+    ██         ██   ██      
+    ██████ ██  ██   ██ ██
+    _____________________
+
+    ███    ██  ██  █████   
+    ████   ██ ███ ██   ██  
+    ██ ██  ██  ██  ██████  
+    ██  ██ ██  ██      ██  
+    ██   ████  ██  █████  
+                                                                                                                
+                            dark matter's by L.A. N19, (c) 2021-24   
+     ").split("\n")
+      songs.each_with_index { |song,i| cov[i+3] = cov[i+3].ljust(29, " ") + (i==s ? ">#" : " #")+i.to_s.rjust(3, "0")+(i==s ? "< " : "  ")+song+" "*10 if i > 0 }
+      File.open(file+"_album", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
+  end 
+else
+
 load $path+"../n19v3.rb" # for inst1: the L.A. N19-Instrument-Algorithm
 
 release=4 # alt: 10
@@ -130,14 +194,17 @@ with_fx :normaliser, mix: 0.9, amp: 0.25 do #finally: blow it up to nearly the m
 end end end end end end end end
 end
 
-tit_sam_name = "D:/LA-N19/dark_matter/dm/flac_titles/00 - dm - "+(s < 2 ? s.to_s : "scene"+(s-1).to_s)+".flac"
 
-txt = txt_en[s].split("\n")
+
+tit_sam_name = "D:/LA-N19/dark_matter/dm/flac_titles/"+scene+".flac" 
+
+sce = s>0 ? "chapter %2d: %s" % [s, scenes[scene.to_sym]] : scenes[scene.to_sym]
+txt = txt_en[scene.to_sym].split("\n")
+print("dbg: title: ", s, scene, sce, txt)
 (txt.length+80).times { |i|
     y=i*-1+40
     # 41x190
     stars=(0..40).map { ((0..18).map { " "*(r=rand_i 8) + ["* "," .","° ", "+ "].choose + " "*(8-r)}).join }
-    sce = s>1 ? "chapter %2d: %s" % [s-1, scene[s]] : scene[s]
     str = [
       [y-1, "-"*sce.length],
       [y, sce],
@@ -156,3 +223,4 @@ txt = txt_en[s].split("\n")
    sleep sample_duration(tit_sam_name) if i==20+txt.length
   }
  
+end
