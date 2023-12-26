@@ -1,11 +1,5 @@
 
-'dm33_I_own_U_v05.rb |
- title:   I own U v0.5
- album:   Artificial Animal
- creator: L.A. N19
-
-  raw instincts
-
+txt = 'dm10_I_own_U_v05.rb |
 -------- -------- -------- -------- -------- -------- -------- 
 -------- chap 1 - P - Prolog - Deer in the woods      -------- 
 -------- -------- -------- -------- -------- -------- -------- 
@@ -41,7 +35,6 @@ v32 run, you are my hunted   *1 154s          /ALT:-> run, you want to hunt
 -------- the hunt                   -------- 
 -------- --------  190 sec -------- -------- 
 
-
 -------- -------- -------- -------- -------- 
 -------- put done                   -------- 
 -------- -------- -------- -------- -------- 
@@ -60,7 +53,8 @@ xx00_slowing_down.wav  (transcendentes gedudel into death)
                I own U                          302s
 
 beat slows down till                            306
-
+'
+'
 escape
 
 
@@ -97,7 +91,20 @@ sam_num = 0
 
 $ply="PD123Hb"
 
-
+final_stop = false
+movie_chap, movie_mode, movie_i = 0, 0, 0
+live_loop :movie do
+  stars=(0..15).map { ((0..18).map { " "*(r=rand_i 8) + ["* "," ."," °", "+ "].choose + " "*(8-r)}).join  }
+  File.open($file, "w+") { |f| f.write(stars.join("\n"), "\n chap: ", movie_chap, " movie_mode:", movie_mode, ", movie_i: ", movie_i, '
+    Konzept nach den Songphasen: PD123Hb
+      chap [P]rolog: Dave schwebt durch den Weltraum 
+      chap [D](123): Sterne formieren sich immer wieder und draengen auf Dave zu 
+      chap [H]unt:   Sterne jagen dave und bekommen ihne auch
+      chap [b]:      Dave "multiplziert" sich und geht in die Sterne auf --> wer wird zu den Sterne/nicht
+  ', stars.join("\n")) }
+  sleep 0.175
+  stop if final_stop 
+end
 
 if $ply["P"] then print "P- Prolog - Deer hiding"
   ctrls = (0..4).map { play 0, sustain: 32, slide: 0.25, amp: 0.1 }
@@ -328,81 +335,5 @@ if $ply["b"] then
   sample sam_path+'xx00_slowing_down.wav'
 end
 
-
-
-stop
-if $ply["S"] then
-  with_fx :normaliser, mix: 0.2 do
-    #with_fx :bitcrusher do
-    16.times do |i| print "slow-low-base ", i, "/16"   #live_loop :y do
-      play :c2
-      with_fx :echo, phase: 0.05, decay: 0.2 do
-        with_fx :ping_pong, phase: 0.02 do
-          at [1.0, 1.1, 1.2] do sample :sn_dub, amp: 0.2, rate: 1.2 end
-      end end
-      sleep 2
-      play (tick(:y) % 2 == 0 ? :c2 : :d2), amp: 0.7
-      sleep 0.5
-  end end #end
-  
-  sleep 1
-  play 120
-  sleep 1
-end
-
-if $ply["R"] then
-  with_fx :normaliser, mix: 0.5, amp: 0.5 do
-    with_fx :ping_pong, phase: 0.125 do
-      sle=rrand(0.05, 1.0)
-      100.times do |i| print "rapidfire drumgun", i, "/100"   #live_loop :drum do
-        ' if tick(:xy) % 10 == 0 then
-                print sle=rrand(0.05, 1.0)
-              end '
-        x, y = 0.4, 0.275
-        tim=[x, y, x, y, x, y, 0.15, 0.05, 0.15, 0.05, 0.15, 0.05,  0.3, 0.1,  0.3, 0.1, 0.3, 0.125, 0.25, 0.125, 0.25, 0.125, 0.25, 0.1, 0.5, 1.0]
-        print sle = tim[(tick(:xy)/4)%tim.length]
-        sample :sn_dub, amp: 0.2, rate: 1.2
-        sleep sle
-        sample :drum_heavy_kick, amp: 0.2, rate: 1.2
-        sleep sle
-        #stop if look(:xy) > 100
-      end
-    end
-  end
-end
-
-#stop
-#sleep 50
-with_fx :normaliser, mix: 0.2 do
-  with_fx :compressor, mix: 1 do
-    with_fx :bitcrusher, mix: 0.1, bits: 1 do
-      with_fx :rhpf do
-        live_loop :y do
-          with_fx :echo, phase: 0.125, decay: 0.25 do
-            sample :sn_dub, rate: -4
-          end
-          sleep 0.5
-          with_fx :echo, decay: 1 do
-            sample :sn_dub, rate: 4
-          end
-          sleep 7.5
-    end end end
-end end
-
 sleep 2
-live_loop :x do
-  at [0, 2, 3.5], [40, 42, 40] do |n| play n end
-  sleep 4
-  
-  sleep 1
-  with_fx :slicer, phase: 0.02 do
-    play 98, attack: 0.5, release: 0
-  end
-  sleep 0.5
-  with_fx :reverb do
-    with_fx :slicer, phase: 0.01 do
-      play 96, release: 0.5, attack: 0
-  end end
-  sleep 0.5
-end
-
+final_stop = true

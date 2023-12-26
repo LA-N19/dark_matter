@@ -2,7 +2,7 @@
   L.A. N19 / 23.8.2021 / Daniel Mueller 
 '
 b_kick = b_ping_in = b_ping = b_click = b_dark = b_guitar = b_growl = b_zick = false
-
+final_stop = false
 
 # kick notes-slide, panning.. for kick i=1 (short and less drop slide, bit shorter release), i=2 -> full kick
 def my_kick(i)
@@ -14,11 +14,9 @@ def my_kick(i)
   control c2, note: [12.1, 0][i%2], pan: -0.25
 end
 
-#4.times { |i| my_kick(i); sleep 0.75 }
-
+with_fx :reverb, mix: 0.2 do #a tiny bit more
+  with_fx :distortion do #
 live_loop :kick do
-  with_fx :reverb, mix: 0.2 do #a tiny bit more
-    with_fx :distortion do #
       #with_synth :fm do # may not: if its done good: sine wave might be enough
       use_synth_defaults divisor: 1.1, depth: 0.2
       4.times { |i|
@@ -50,15 +48,17 @@ live_loop :kick do
             end
           else sleep 2; end
         end
-      }
+        stop if final_stop
+      }     
 end end end
 
 # kick shadow 1: crispy + overpressure exhaust click
 live_loop :x1 do
-  4.times {
-    with_fx :normaliser, mix: 1, amp: 0.02, amp_slide: 2 do |fx_n|
-      with_fx :reverb, mix: 0.15 do  with_synth :blade do
-          with_fx :bitcrusher, bits: 6, sample_rate: 909 do
+  with_fx :normaliser, mix: 1, amp: 0.02, amp_slide: 2 do |fx_n|
+    with_fx :reverb, mix: 0.15 do 
+       with_synth :blade do
+        with_fx :bitcrusher, bits: 6, sample_rate: 909 do
+          4.times {
             2.times { |i|
               if b_click then
                 c = play [50, 50.1], note_slide: [0.3, 0.5][i]
@@ -69,16 +69,16 @@ live_loop :x1 do
             }
             control fx_n, amp: 1
             sleep 2
-    end end end end
-  }
-end
+            stop if final_stop
+          }
+end end end end end
 
 #kick shadow 1: dark void echo
 live_loop :x2 do
-  4.times { |ii|
     with_fx :normaliser, mix: 1, amp: 0.05, amp_slide: 2 do |fx_n|
       with_fx :distortion do
         with_fx :reverb, mix: 0.15 do  with_synth :blade do
+          4.times { |ii|
             2.times { |i|
               if b_dark then
                 c = play [50, 50.1], note_slide: [0.3, 0.5][i]
@@ -93,9 +93,9 @@ live_loop :x2 do
             }
             control fx_n, amp: 1 if b_dark
             sleep 2
-    end end end end
+            stop if final_stop
   }
-end
+end end end end end
 
 
 
@@ -109,8 +109,8 @@ n = 50 - 12*2
 c_o = 0
 c_i = 1
 c =  (0..(6*4-1)).map { play 0, attack: 1, decay: 200, sustain: 40, pan_slide: 0.25, note_slide: 0.1, amp_slide: 0.4 }
-live_loop :whoooooble do
-  with_fx :slicer do |fx_slice|
+with_fx :slicer do |fx_slice|
+  live_loop :whoooooble do
     sleep rrand(0.45, 0.5)
     #print "c1(n%d.2, p%d.2) c2(n%d.2, p%d.2)" % [n1=n+rrand(-0.6, 0.4), p1=rrand(-1, 1), n2=n+rrand(-0.4, 0.4), p2=rrand(-1, 1)]
     a = chord(n, :minor7) #+ chord(n, :minor7).each { |xx| xx+12 }
@@ -123,9 +123,9 @@ live_loop :whoooooble do
       control c[ii*4+4], note: no+24+rrand(-0.6, 0.4), pan: r=rrand(-1, 1), amp: c_o > 1 ? 0 : rrand(0.2, 0.3)
       control c[ii*4+5], note: no+24+rrand(-0.6, 0.4), pan: r*-1, amp: c_o > 1 ? 0 : rrand(0.2, 0.3)
       control fx_slice, mix: [0, 0.5, 1].choose
+      stop if final_stop
     }
-  end
-end
+end end
 
 sleep 4
 dki=0
@@ -144,12 +144,14 @@ live_loop :w_ctrl do
   sleep 4
   use_bpm 0.2*bpm_old + 0.8*bpm_new
   dki+=1
+  stop if final_stop
 end
 #sleep 10
 
 print 0; c_o = 1; sleep 12; b_kick = true
 print 1; c_o = 0; sleep 12; b_kick = true
 print 2; c_o = 1; sleep 6;  b_zick = true
+'
 2.times {
   print 3; c_o = 0; sleep 6;  b_ping_in = b_ping = b_click =  b_dark = true
   print 4; sleep 12; b_guitar = b_growl = true; b_ping_in = b_ping = b_click =  b_dark = b_zick = false
@@ -160,6 +162,9 @@ print 2; c_o = 1; sleep 6;  b_zick = true
   print 10; sleep 6; c_o = 1; b_ping = false;
   print 11; sleep 12; c_o = 2; b_zick = b_growl = true;
 }
+'
 b_zick = b_growl = false;
-sleep 6
-stop
+final_stop = true
+sleep 2
+c.each { |ctrl| kill ctrl; sleep 1 }
+sleep 2

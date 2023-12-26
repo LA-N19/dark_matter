@@ -160,6 +160,15 @@ if $m == 1 then
      ").split("\n")
       songs.each_with_index { |song,i| cov[i+3] = cov[i+3].ljust(29, " ") + (i==s ? ">#" : " #")+i.to_s.rjust(3, "0")+(i==s ? "< " : "  ")+song+" "*10 if i > 0 }
       File.open(file+"_album", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
+
+      File.open($file_wav_cut_bash_out+"_"+scene+"_cover.txt", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
+      File.open($file_wav_cut_bash_out, "a+")  { |f|
+        wav_filename = "dm_"+(s-1).to_s.rjust(3,"0")
+        f.write("\nsox dm.wav ", wav_filename, ".wav trim ", $vt.to_i, " ", (vt-$vt).to_i)
+        f.write("\nlame -V3 "+wav_filename+".wav "+wav_filename+".mp3")
+        f.write("\nid3v2 -a 'L.A.N19' -A 'dark matters' -t '"+songs[s]+"' -g 'home brew sonic' -T "+s.to_s+" -y 2024 "+wav_filename+".mp3")
+      }
+      $vt=vt
   end 
 else
 
@@ -195,9 +204,8 @@ end end end end end end end end
 end
 
 
-
-tit_sam_name = "D:/LA-N19/dark_matter/dm/flac_titles/"+scene+".flac" 
-
+tit_sam_name = $path+"/flac_titles/"+scene+".flac" 
+print(tit_sam_name)
 sce = s>0 ? "chapter %2d: %s" % [s, scenes[scene.to_sym]] : scenes[scene.to_sym]
 txt = txt_en[scene.to_sym].split("\n")
 print("dbg: title: ", s, scene, sce, txt)
@@ -222,5 +230,4 @@ print("dbg: title: ", s, scene, sce, txt)
    sample tit_sam_name, amp: 1 if i==20
    sleep sample_duration(tit_sam_name) if i==20+txt.length
   }
- 
 end

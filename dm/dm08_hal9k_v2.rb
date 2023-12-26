@@ -48,7 +48,6 @@ haitsu = :perc_snap
 haitsu2 = :drum_cymbal_pedal
 '
 
-final_stop=false
 live_loop :pic do
   stop if final_stop
   t=tick
@@ -124,15 +123,7 @@ def intro
     sleep 4
   end
 end
-"
-live_loop :elec do
-  sync 3;
-  8.times do
-    sample :loop_electric
-    sleep sample_duration :loop_electric
-  end
-end
-"
+
 bss=false
 live_loop :bss do
   if bss then with_fx :distortion, mix: 0.5, amp: 0.95 do with_fx :panslicer, smooth_up: 0.1, smooth_down: 0.1 do
@@ -159,8 +150,8 @@ live_loop :robot_control do
     tra_amp_s = 0
   end
   if i==76 then
-  final_stop=true
-  stop
+    final_stop=true
+    stop
   end
   #cue 3 if i>48 and i<60
   if i==64 then
@@ -240,6 +231,7 @@ live_loop :tra do
     sleep (sample_duration :bass_trance_c) / 8.0
     control tra, amp: tra_amp=amp_slider(tra_amp, tra_amp_s)#[0.0, [0.5, tra_amp+tra_amp_s].min].max
   end
+  stop if final_stop
 end
 
 live_loop :robot_twang do

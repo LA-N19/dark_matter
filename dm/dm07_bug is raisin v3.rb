@@ -15,13 +15,6 @@
 # CYMATICS: Science Vs. Music - Nigel Stanford
 #use_sample_bpm :loop_compus, num_beats: 2
 
-"
-live_loop :loopr do
-  sample :loop_compus, rate: [0.5, 1, 1, 1, 1, 2].choose unless one_in(10)
-  sleep 4
-end
-"
-
 #use_random_seed 3
 use_bpm 40
 use_debug false
@@ -288,90 +281,3 @@ end
 dro =0
 sample :ambi_swoosh, amp: 1
 final_stop=true
-"
-use_sample_bpm :loop_amen
-with_fx :rlpf, cutoff: 10, cutoff_slide: 4 do |c|
-  live_loop :dnb do
-    sample :bass_dnb_f, amp: 5
-    sample :loop_amen, amp: 5
-    sleep 1
-    control c, cutoff: rrand(40, 120), cutoff_slide: rrand(1, 4)
-  end
-end
-"
-
-"
-live_loop :hov do
-  #use_synth :mod_tri
-  use_synth :mod_pulse
-  play_pattern [:e3, :e3, :c3, :d3, :c3, :a3, :c3, :d3], [0.25, 0.25, 0.125, 0.125, 0.25, 0.25, 0.25, 0.25]
-end
-"
-
-#sleep 10
-#use_bpm 55
-#pl_amp = 0# [0.0,0.25,0.5].choose;
-#co1_amp = 0
-#co2_amp = 0
-#sleep 14
-#$co_amp = 0.5
-#sleep 16
-#$co_amp = 0.5
-
-
-"
-
-use_sample_bpm :loop_compus, num_beats: 4
-
-live_loop :loopr do
-  sample :loop_compus, rate: [0.5, 1, 1, 1, 1, 2].choose unless one_in(10)
-  sleep 4
-end
-
-live_loop :bass do
-  sample :bass_voxy_c, amp: rrand(0.1, 0.2), rate: [0.5, 0.5, 1, 1,2,4].choose if one_in(4)
-  use_synth :mod_pulse
-  use_synth_defaults mod_invert_wave: 1
-  play :C1, mod_range: 12, amp: rrand(0.5, 1), mod_phase: [0.25, 0.5, 1].choose, release: 1, cutoff: rrand(50, 90)
-  play :C2, mod_range: [24, 36, 34].choose, amp: 0.35, mod_phase: 0.25, release: 2, cutoff: 60, pulse_width: rand
-  sleep 1
-  #  stop
-end
-
-
-
-
-
-basari = :bd_klub
-virveli = :sn_dolf
-haitsu = :perc_snap
-haitsu2 = :drum_cymbal_pedal
-
-with_fx :distortion, mix: 0.08 do
-  with_fx :nrhpf, mix: 0.05 do
-
-    live_loop :drumloop do
-      at [1, 2, 4] do
-        sample basari, amp: rrand(1, 1.5), rate: rrand(0.95, 1.05)
-      end
-      at [2.5, 6.5] do
-        sample virveli, amp: rrand(0.6, 1), rate: rrand(0.95, 1.05)
-        sleep 0.1
-        with_fx :gverb, amp: 0.6, mix: 1, spread: 1, delay: 10 do
-          sample virveli, amp: rrand(0.3, 0.5), rate: rrand(0.95, 1.05)
-        end
-      end
-      at [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5] do
-        with_fx :flanger, mix: 0.5, depth: 40, delay: 20, decay: 5, feedback: rrand(0.1, 1.0) do
-          sample haitsu, amp: rrand(0.3, 0.5), rate: rrand(2.1, 2.2), pan: rrand(-0.25, 0.25)
-          if one_in(10)
-            sleep 0.5
-            sample haitsu2, amp: rrand(0.6, 0.9), rate: rrand(1.1, 1.2), pan: rrand(-0.25, 0.25)
-          end
-        end
-      end
-      sleep 8
-    end
-end end
-
-"

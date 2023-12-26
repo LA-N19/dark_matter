@@ -1,4 +1,15 @@
+Todo
+# todo009: describe build process
+# todo010: review hole movie and note which parts to be improve
+# todo011: review story and make new flac-files
+# todo012: wav cutting using ffmpeg
+
+Done
 # todo001: get it run
 # todo002: integrate night train into the movie
 # todo003: actualize the cover
-# todo020: integrate dm33 into the movie
+# todo004: integrate dm33 into the movie
+# todo005: pause recording during title
+# todo006: dm08 stop sound
+# todo007: dm09 stop sound and end song
+# todo008: dm10 movie conzept
