@@ -54,14 +54,14 @@ $s = 8; rec_mode = 1; eval_file $path+"dm_titles.rb"; rec_mode = $m;
 eval_file $path+"dm08_hal9k_v2.rb"
 
 # dm09_dark_kick.rb:
-rec = 50
 $s = 9; rec_mode = 1; eval_file $path+"dm_titles.rb"; rec_mode = $m;
 rec_mode = 1;
 live_loop :rec do
   re=rand_i rec
-  FileUtils.cp($path+"txt_rec/rec_"+re.to_s.rjust(6, "0")+".txt", $file)
+  FileUtils.cp($path+"../txt_rec/rec_"+re.to_s.rjust(6, "0")+".txt", $file)
   sleep 0.2
 end
+
 eval_file $path+"dm09_dark_kick.rb"
 
 # now recording: final end!

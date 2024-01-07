@@ -1,0 +1,10 @@
+#sox dm.wav dm_001.wav trim 0 261
+#sox dm.wav dm_002.wav trim 261 428
+sox dm.wav dm_002.wav trim 03:01 02:37
+#sox dm.wav dm_003.wav trim 428 193
+#sox dm.wav dm_004.wav trim 622 424
+#sox dm.wav dm_005.wav trim 1046 287
+#sox dm.wav dm_006.wav trim 1333 204
+#sox dm.wav dm_007.wav trim 1537 144
+#sox dm.wav dm_008.wav trim 1682 232
+#sox dm.wav dm_009.wav trim 1914 62

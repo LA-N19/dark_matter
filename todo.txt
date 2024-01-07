@@ -3,6 +3,8 @@ Todo
 # todo010: review hole movie and note which parts to be improve
 # todo011: review story and make new flac-files
 # todo012: wav cutting using ffmpeg
+# todo013: uebernehmen der L.A.N19-Instrumente: Chord-Knitter (Helix-Up, Up, Maschendraht,...), Glitter, etc.pp., Integer-Div-Multi-Harmonics
+# todo014: change the stars
 
 Done
 # todo001: get it run
@@ -13,3 +15,4 @@ Done
 # todo006: dm08 stop sound
 # todo007: dm09 stop sound and end song
 # todo008: dm10 movie conzept
+

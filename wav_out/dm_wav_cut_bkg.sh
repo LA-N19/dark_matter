@@ -45,16 +45,3 @@ eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_007.mp3
 eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_008.mp3
 eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_009.mp3
 eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_010.mp3
-
-sox dm.wav dm_000.wav trim 0 0
-lame -V3 dm_000.wav dm_000.mp3
-id3v2 -a 'L.A.N19' -A 'dark matters' -t '_______________awakening v0.02' -g 'home brew sonic' -T 1 -y 2024 dm_000.mp3
-eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_000.mp3
-sox dm.wav dm_000.wav trim 0 0
-lame -V3 dm_000.wav dm_000.mp3
-id3v2 -a 'L.A.N19' -A 'dark matters' -t '_______________awakening v0.02' -g 'home brew sonic' -T 1 -y 2024 dm_000.mp3
-eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_000.mp3
-sox dm.wav dm_000.wav trim 0 0
-lame -V3 dm_000.wav dm_000.mp3
-id3v2 -a 'L.A.N19' -A 'dark matters' -t 'awakening v0.02' -g 'home brew sonic' -T 1 -y 2024 dm_000.mp3
-eyeD3 --add-image 'dm_cov.png:FRONT_COVER' dm_000.mp3

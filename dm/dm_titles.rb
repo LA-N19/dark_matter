@@ -9,7 +9,21 @@ m = $m; s = $s
 
 #https://freetts.com/#ads / Matthew_Male
 
+songs = "dm_Asd.rb
+dm01_awakening_v02.rb
+dm02_engine_room_v01.rb
+dm03_harmony_swarm_v01.rb
+dm04_night_train.rb
+dm05_pentatiano_v07.rb
+dm06_cheater_chord_invasion v6.rb
+dm07_bug_is_raisin_v3.rb
+dm08_hal9k_v2.rb
+dm09_dark_kick.rb
+dm10_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ") } #.rjust(30, "_") } 
+
+
 scenes = {
+  "scene-3": "description of this movie/sound track/project",
   "scene-1": "dark matter(s) odessey",
   "scene-2": "prelude",
   "scene1": "the awakening",
@@ -26,6 +40,27 @@ scenes = {
 
 
 txt_en = {
+  "scene-3": """
+this is a sonic pi project for an lowfi scifi ascii art silent movie called:
+  dark matter(s)
+
+It metaphorize the corona pendamic and the elon musk hype and during 2020-2023
+into 2120-2123 where ... Uh, just read the following movie chapters descriptions ;)
+
+Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
+(Support him using patreon or github sponsors, see https://sonic-pi.net/)
+
+you can find the 2 years old version v0.1 you can watch at youtube:
+  https://www.youtube.com/watch?v=COeXdAULNlI&feature=youtu.be
+or the actual sound track on sound cloud:
+  https://soundcloud.com/la_n19/sets/lan19-dark-matters
+even the code can be found on git hub:
+  https://github.com/LA-N19/dark_matter.git
+
+The following scenes has been added to the movie:
+  sleep well night train- https://www.youtube.com/watch?v=tvFBvcd-NZI (with movie)
+  i own u - https://www.youtube.com/watch?v=GyTxcFLzcAc (has no movie yet)
+""",
   "scene-1": """
 a lonely travel of humanity onto dark
 
@@ -109,39 +144,17 @@ began to collapse and got shuffle
 }
 
 logos = { "scene1": "
-°               °      °           .                °     °                °           .             +            *       +
-                     ______                                                                                                  
-*                   / ___  \                                                                                                                                                          
-      *            / /__//  \/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/\//\/\//\\/   
-.                 /..:       o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o    o  o  o   
-*                 \ ______  _______________________________________________________________________________________________________________________________________________________   
-       °           \ \|_|/ /\/\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/\\//\\\//\/   
- .                  \_____/                                                                                                                                                           
-    °      .            °             *          °          °                   .     +            .                °      .           .             °        +         .            
- +             °          °                *          *         .  "
-}
+[o]
+|_| 
+"}
 
-
-songs = "dm_Asd.rb
-dm01_awakening_v02.rb
-dm02_engine_room_v01.rb
-dm03_harmony_swarm_v01.rb
-dm04_night_train.rb
-dm05_pentatiano_v07.rb
-dm06_cheater_chord_invasion v6.rb
-dm07_bug_is_raisin_v3.rb
-dm08_hal9k_v2.rb
-dm09_dark_kick.rb
-dm10_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ").rjust(30, "_") } 
 
 scene = "scene"+s.to_s
 
 # https://patorjk.com/software/taag/#p=testall&f=Graffiti&t=dark%20matter(s) / font: Bigfig
 
-
-if $m == 1 then
-  if s > 0 then
-    cov = ("
+def return_cover(sel, songs2)
+  cov = ("
                              _| _  __ |    __  _ _|__|_ _  __  | _    
     ██          █████       (_|(_| |  |<   |||(_| |_ |_(/_ |    _>              
     ██         ██   ██      
@@ -158,17 +171,39 @@ if $m == 1 then
                                                                                                                 
                             dark matter's by L.A. N19, (c) 2021-24   
      ").split("\n")
-      songs.each_with_index { |song,i| cov[i+3] = cov[i+3].ljust(29, " ") + (i==s ? ">#" : " #")+i.to_s.rjust(3, "0")+(i==s ? "< " : "  ")+song+" "*10 if i > 0 }
-      File.open(file+"_album", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
+  songs2.each_with_index { |song,i| cov[i+3] = cov[i+3].ljust(29, " ") + (i==sel ? ">#" : " #")+i.to_s.rjust(3, "0")+(i==sel ? "< " : "  ")+song+" "*10 if i > 0 }
+  return cov
+end
 
-      File.open($file_wav_cut_bash_out+"_"+scene+"_cover.txt", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
-      File.open($file_wav_cut_bash_out, "a+")  { |f|
-        wav_filename = "dm_"+(s-1).to_s.rjust(3,"0")
-        f.write("\nsox dm.wav ", wav_filename, ".wav trim ", $vt.to_i, " ", (vt-$vt).to_i)
-        f.write("\nlame -V3 "+wav_filename+".wav "+wav_filename+".mp3")
-        f.write("\nid3v2 -a 'L.A.N19' -A 'dark matters' -t '"+songs[s]+"' -g 'home brew sonic' -T "+s.to_s+" -y 2024 "+wav_filename+".mp3")
-      }
-      $vt=vt
+if $m == 2 then
+  File.open(file+"_cover_text", "w+") { |f| 
+    f.write(return_cover(-100, songs).join("\n")) 
+    scenes.each { |k,v|
+    sep = "\n"+"*"* 100+"\n"
+    f.write(sep, "   ", k, " - ", v, sep, txt_en[k.to_sym])
+    }
+  }
+  stop
+end
+
+if $m == 1 then
+
+  if s > 1 then
+    s1 = s - 1; scene1 = "scene"+s1.to_s
+
+    # output the cover
+    File.open(file+"_album", "w+") { |f| f.write(return_cover(s1, songs).join("\n")) } # + "\n" + logos[scene.to_sym]) }
+
+    File.open($file_wav_cut_bash_out+"_"+scene1+"_cover.txt", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
+    File.open($file_wav_cut_bash_out, "a+")  { |f|
+      wav_filename = "dm_"+s1.to_s.rjust(3,"0")
+      f.write("\nsox dm.wav ", wav_filename, ".wav trim ", $vt.to_i, " ", (vt-$vt).to_i)
+      f.write("\nlame -V3 "+wav_filename+".wav "+wav_filename+".mp3")
+      f.write("\nid3v2 -a 'L.A.N19' -A 'dark matters' -t '"+songs[s1]+"' -g 'sonic home brew' -T "+s1.to_s+" -y 2024 "+wav_filename+".mp3")
+      f.write("\neyeD3 --add-image 'dm_cov_front.png:FRONT_COVER' "+wav_filename+".mp3")
+      f.write("\neyeD3 --add-image 'dm_cov_back.png:BACK_COVER' "+wav_filename+".mp3")
+    }
+    $vt=vt
   end 
 else
 
