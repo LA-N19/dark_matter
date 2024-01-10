@@ -16,14 +16,15 @@ dm03_harmony_swarm_v01.rb
 dm04_night_train.rb
 dm05_pentatiano_v07.rb
 dm06_cheater_chord_invasion v6.rb
-dm07_bug_is_raisin_v3.rb
-dm08_hal9k_v2.rb
-dm09_dark_kick.rb
-dm10_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ") } #.rjust(30, "_") } 
+dm07_de4d_mouse.rb
+dm08_bug_is_raisin_v3.rb
+dm09_hal9k_v2.rb
+dm10_dark_kick.rb
+dm11_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ") } #.rjust(30, "_") } 
 
+# https://ttsmaker.com/
 
 scenes = {
-  "scene-3": "description of this movie/sound track/project",
   "scene-1": "dark matter(s) odessey",
   "scene-2": "prelude",
   "scene1": "the awakening",
@@ -32,39 +33,75 @@ scenes = {
   "scene4": "harmony swarm",
   "scene5": "pentatiano",
   "scene6": "cheater chord inversion",
-  "scene7": "bug is growing",
-  "scene8": "hal9k",
-  "scene9": "dark void space folding",
-  "scene10": "I own U"
+  "scene7": "de4d mouse",
+  "scene8": "bug is raising",
+  "scene9": "hal9k",
+  "scene10": "dark void space kick",
+  "scene11": "I own U",
+  "scene-3": "credits and making of"
 }
 
 
 txt_en = {
   "scene-3": """
 this is a sonic pi project for an lowfi scifi ascii art silent movie called:
-  dark matter(s)
+  dark matter, respectivily: dark matters
 
-It metaphorize the corona pendamic and the elon musk hype and during 2020-2023
-into 2120-2123 where ... Uh, just read the following movie chapters descriptions ;)
+It metaphorize the corona pendamic and the elon musk hype during in the early 2020s
+into the early 2120s.
+
+However, just read the following movie chapters descriptions ;)
 
 Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
 (Support him using patreon or github sponsors, see https://sonic-pi.net/)
 
-you can find the 2 years old version v0.1 you can watch at youtube:
+You can find the 2 years old version v0.1 you can watch at youtube (missing the 3 chapters):
   https://www.youtube.com/watch?v=COeXdAULNlI&feature=youtu.be
 or the actual sound track on sound cloud:
   https://soundcloud.com/la_n19/sets/lan19-dark-matters
 even the code can be found on git hub:
   https://github.com/LA-N19/dark_matter.git
 
-The following scenes has been added to the movie:
-  sleep well night train- https://www.youtube.com/watch?v=tvFBvcd-NZI (with movie)
-  i own u - https://www.youtube.com/watch?v=GyTxcFLzcAc (has no movie yet)
+Corona and digitalision c
+  
+This movie and its sound tracks are all made by myself nearly only using my old PC,
+sonic pi (which is for free; please donate!) and a seldom used Donner dmk25 as midi-instrument.
+My refurbished dmk25 for 70€ is used to get input some melodies, but is only really
+used in realtime in the song #011 I own you.
+But it took endless ours to make the sounds you can hear and the movie you can watch.
+
+For the songs there has been programmed the following instruments:
+ 1. chord knitter: sliding from notes to using several sliding note patterns
+    the chord knitter is used in song #004 harmony swarms fixed coded
+    the chord knitter can be played using midi (only the already mentioned dmk25)
+ 2. integer ratio harmony definition instrument: 
+    if you know about music theory, perfect harmony is archieved by using frequencies,
+    which has an integer denominator and devisor, thus integer ratio in relation to 
+    the played root note.
+    This instrument can define a list of interger denominator and devisor to have
+    adding those frequenzies to you played note and gives free defined hormonic hightones.
+    Good for cinmenatic & ambient pads, wind instrument, bowed string instruments.
+    The instruments can be used to blast the frequency band from low to high.
+    Where is ultraharmonic it sounds synthetic and wheirdly a bit cold as it is to 
+    harmonic and has not much or even no movement.
+    This instrument is used here and there to make a basic ambient background fill.
+ 3. The dark void kick:
+   The dark void kick is only used in the song #010, which is all about this kick.
+   The kick is programmed starting at a sine wave and simulate a kick as it should be.
+   The kick is sometimes only played 'wet' (if you are into sound synthesis: you'll know ;)).
+
+If you get that far: I really appreciate py you've been that interested!
+Thanks for watching and listening.
+It's not ment to be pleasure, but if it is has been totally weird to you: Great!
+
+Furhter: i know that the songs are some time oversteer until the sound clips.
+But I like it! I also used a normalizer instead of an compressor and enjoy the
+really brutal and rough punch and its clipping.
 """,
   "scene-1": """
 a lonely travel of humanity onto dark
 
-sonicpi-lowFi/sciFi-movie by L.A. N19 
+a sonicpi-lowFi/sciFi Silent movie by L.A. N19 
 """,
   "scene-2": """
 the earth is almost destroyed by humanity
@@ -82,7 +119,7 @@ meant that it was a great idea.
 
 But: The pale A.I. just liked the name of the planet.
 """,
- 
+
   "scene1": """
 Whatever the case, on the several years long journey with the giant spaceship 
 C.O.C.K. (Common Odessey Carriage Kollosom),
@@ -105,10 +142,10 @@ So he count trains as he know them from historic documentation.
 """,
 
   "scene4": """
-the space ship is switched to generous autopilot drive mode 
+The space ship is switched to generous autopilot drive mode 
 and start dancing around asteroids.
-
-SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!!!
+  
+SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
 """,
 
 "scene5": """ 
@@ -119,31 +156,47 @@ Let's see how far he's come.
 """,
   "scene6": 
 """
-while the journey goes on and on dave found a old lp
+While the journey goes on and on dave found a old lp
 from the intpreter L.A. N19 covering adam cheater
 with the song cheater chord inversion from the early 21th century.
 
 Let's hear how this old songs sound like.
 """,
 
-"scene7":  """
-something is happening... with the pale A.I.
-something is going weird
-
-Dave should look at the computer
+"scene7": """
+A mouse, which found and eat some Upper pills.
+Those common Upper pills for the usage after decryoninsation.
+But the mouse weight's a 23 gram (0.002875% of an human).
+It totally cracked up and went berserk!
 """,
-"scene8": """
+
+"scene8":  """
+The cable the mouse has bitten, causes an error ... with the pale A.I.
+Something is going weird.
+
+Dave will have look at the old computer interface.
+""",
+
+"scene9": """
 the bug is raised and it seems like it will take over the space ship
 and dave tries to bring himself to safety.
 """,
-"scene9": """
-after dave short-circuit the space folding drive time and space
-began to collapse and got shuffle 
+"scene10": """
+After dave short-circuit the space folding drive,
+time and space began to collapse and got shuffled.
+
+SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
 """,
-"scene10": "I own U"
+"scene11": """
+Hence space is folder and thus all is universe and the universe is all, 
+Dave have to be merged with it's dark matter to get assimillated the universe 
+to get part of the entirety universe and transcendent omnipresents.
+
+SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
+"""
 }
 
-logos = { "scene1": "
+logos = { "scene2": "
 [o]
 |_| 
 "}
@@ -175,6 +228,18 @@ def return_cover(sel, songs2)
   return cov
 end
 
+
+if $m == 3 then
+  File.open($path+"/txt2wav/text2speach.sh", "w+") { |f| 
+  (-4..11).each { |s|
+      scene = "scene"+s.to_s
+      title = s>0 ? "chapter %2d: %s" % [s, scenes[scene.to_sym]] : scenes[scene.to_sym]
+      f.write("espeak \"", title, "\n\n", txt_en[scene.to_sym], "\" -w ", $wsl_path, "txt2wav/", scene, ".wav\n\n\n")
+    } 
+  }
+  stop
+end
+    
 if $m == 2 then
   File.open(file+"_cover_text", "w+") { |f| 
     f.write(return_cover(-100, songs).join("\n")) 
@@ -189,19 +254,20 @@ end
 if $m == 1 then
 
   if s > 1 then
-    s1 = s - 1; scene1 = "scene"+s1.to_s
+    s1 = s - 1; scene2 = "scene"+s1.to_s
 
     # output the cover
     File.open(file+"_album", "w+") { |f| f.write(return_cover(s1, songs).join("\n")) } # + "\n" + logos[scene.to_sym]) }
 
-    File.open($file_wav_cut_bash_out+"_"+scene1+"_cover.txt", "w+") { |f| f.write(cov.join("\n")) } # + "\n" + logos[scene.to_sym]) }
     File.open($file_wav_cut_bash_out, "a+")  { |f|
-      wav_filename = "dm_"+s1.to_s.rjust(3,"0")
-      f.write("\nsox dm.wav ", wav_filename, ".wav trim ", $vt.to_i, " ", (vt-$vt).to_i)
-      f.write("\nlame -V3 "+wav_filename+".wav "+wav_filename+".mp3")
-      f.write("\nid3v2 -a 'L.A.N19' -A 'dark matters' -t '"+songs[s1]+"' -g 'sonic home brew' -T "+s1.to_s+" -y 2024 "+wav_filename+".mp3")
-      f.write("\neyeD3 --add-image 'dm_cov_front.png:FRONT_COVER' "+wav_filename+".mp3")
-      f.write("\neyeD3 --add-image 'dm_cov_back.png:BACK_COVER' "+wav_filename+".mp3")
+      songname = "dm"+s1.to_s.rjust(3,"0")+"_"+songs[s1]
+      wavname = "'"+songname+".wav'"; mp3name = "'"+songname+".mp3'"
+      f.write("\n\n######### "+songname+" #########")
+      f.write("\nsox dm.wav ", wavname, " trim ", $vt.to_i, " ", (vt-$vt).to_i)
+      f.write("\nlame -V3 "+wavname+" "+mp3name)
+      f.write("\nid3v2 -a 'L.A.N19' -A 'dark matters' -t '"+songname+"' -g 'L.A.N19 - sonic home brew studios' -T "+s1.to_s+" -y 2024 "+mp3name)
+      f.write("\neyeD3 --add-image 'dm_cov_front.png:FRONT_COVER' "+mp3name)
+      f.write("\neyeD3 --add-image 'dm_cov_back.png:BACK_COVER' "+mp3name)
     }
     $vt=vt
   end 
@@ -238,8 +304,7 @@ with_fx :normaliser, mix: 0.9, amp: 0.25 do #finally: blow it up to nearly the m
 end end end end end end end end
 end
 
-
-tit_sam_name = $path+"/flac_titles/"+scene+".flac" 
+tit_sam_name = $path+"/txt2wav/"+scene+".wav"
 print(tit_sam_name)
 sce = s>0 ? "chapter %2d: %s" % [s, scenes[scene.to_sym]] : scenes[scene.to_sym]
 txt = txt_en[scene.to_sym].split("\n")

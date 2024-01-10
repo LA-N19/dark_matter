@@ -328,7 +328,7 @@ sleep 16
 pl_knits=0
 sleep 16
 pl_stop=true
-sleep 4
+sleep 8
 '
 #live_loop :l do
 with_synth :fm do

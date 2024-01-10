@@ -323,3 +323,4 @@ msg_malfunc = 10
 while $awa_stop == false 
   sleep 1
 end
+sleep 30

@@ -351,3 +351,4 @@ sleep song_len
 sto = 1
 sleep 4
 sto = 2
+sleep 4

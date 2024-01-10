@@ -5,6 +5,7 @@ Todo
 # todo012: wav cutting using ffmpeg
 # todo013: uebernehmen der L.A.N19-Instrumente: Chord-Knitter (Helix-Up, Up, Maschendraht,...), Glitter, etc.pp., Integer-Div-Multi-Harmonics
 # todo014: change the stars
+# todo015: vll doch lieber de4d mouse statt als scene 001 scene 008, so dass die mouse mit dem kabelbiss eine den virus erzeugt (folgelied ist dann dm00(8->9)_bug is raisin v0.3)
 
 Done
 # todo001: get it run
@@ -16,3 +17,15 @@ Done
 # todo007: dm09 stop sound and end song
 # todo008: dm10 movie conzept
 
+
+
+
+OLD-TODOs: PLEASE CHECK THEM:
+# todo 1: Alle Texte �berarbeiten
+# todo 2: dm01-oeffnen des sarks: zeicvhen weg und noch Fenster mit sternen
+# todo 3: dm05: Andere Tanzmodi: moonwalk und breakdance
+# todo 4: dm06: corona-virus programmieren
+# todo 5: dm07: hal9k / tueren, saerge, stop/go
+# toto 6: geschichte weiterschreiben
+# todo 7: text2ogg
+# todo 8: title seite abspann

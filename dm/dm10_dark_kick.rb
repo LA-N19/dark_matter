@@ -151,7 +151,6 @@ end
 print 0; c_o = 1; sleep 12; b_kick = true
 print 1; c_o = 0; sleep 12; b_kick = true
 print 2; c_o = 1; sleep 6;  b_zick = true
-'
 2.times {
   print 3; c_o = 0; sleep 6;  b_ping_in = b_ping = b_click =  b_dark = true
   print 4; sleep 12; b_guitar = b_growl = true; b_ping_in = b_ping = b_click =  b_dark = b_zick = false
@@ -162,9 +161,9 @@ print 2; c_o = 1; sleep 6;  b_zick = true
   print 10; sleep 6; c_o = 1; b_ping = false;
   print 11; sleep 12; c_o = 2; b_zick = b_growl = true;
 }
-'
 b_zick = b_growl = false;
 final_stop = true
+use_bpm 60
 sleep 2
 c.each { |ctrl| kill ctrl; sleep 1 }
-sleep 2
+sleep 6

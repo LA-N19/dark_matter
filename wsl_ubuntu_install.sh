@@ -7,3 +7,4 @@
 sudo apt-get install sox
 sudo apt-get install lame
 sudo apt-get install id3v2
+sudo apt-get install espeak -y

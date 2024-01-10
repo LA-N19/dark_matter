@@ -408,3 +408,4 @@ d_dingel=0
 sleep sleeping
 d=0
 final_stop = true
+sleep 8
