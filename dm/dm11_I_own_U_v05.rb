@@ -326,6 +326,7 @@ if $ply["b"] then
         play :Bb6, sustain: 10, release: 0
         sleep 12
         play :Bb7, sustain: 0.1, release: 0
+        final_stop = true
         stop
       end
   end end
@@ -336,5 +337,8 @@ if $ply["b"] then
 end
 
 sleep 2
-final_stop = true
-sleep 8
+live_loop :dm11_waiter do
+  stop if final_stop
+  sleep 2
+end
+sleep 2
