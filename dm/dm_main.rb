@@ -2,7 +2,7 @@
 #
 # watch -n 0,2 "tail -40 /mnt/d/LA-N19/dark_matter/dm/txt_out/dm.txt"
 
-$m = 1 # [m]ode: -1: dbg, 0:movie, 1:album, 2: booklet, 3: txt2wav
+$m = 0 # [m]ode: -1: dbg, 0:movie, 1:album, 2: booklet, 3: txt2wav
 disk="d"
 $path = disk+":/LA-N19/dark_matter/dm/"
 $wsl_path = "/mnt/%s/LA-N19/dark_matter/dm/" % [disk]
@@ -16,11 +16,16 @@ if $m == 2 or $m == 3  then
   stop
 end
 
+print('for watching this movie enter this code in your wsl:')
+print('watch -n 0,2 "tail -40 %s"' % [wsl_file])
 
-print('for watching this movie enter this code in :
-watch -n 0,2 "tail -40 %s"
-' % [wsl_file])
-
+if $m == 0 then
+  9.times { |iii|
+    File.open($file, 'w+') { |file|
+      file.write(("|"+(10-iii).to_s*180+"|\n")*40)
+    }
+    sleep 1
+} end
 
 
 # screen recording by copying the output file $file to txt_rec/[i].txt
@@ -62,7 +67,7 @@ $s = 8; rec_mode = 1; eval_file $path+"dm_titles.rb"; rec_mode = $m;
 eval_file $path+"dm08_bug is raisin v3.rb"
 
 $s = 9; rec_mode = 1; eval_file $path+"dm_titles.rb"; rec_mode = $m;
-eval_file $path+"dm09_hal9k_v2.rb" # TODO: Movie
+eval_file $path+"dm09_hal9k_v2.rb"
 
 # dm10_dark_kick.rb:
 $s = 10; rec_mode = 1; eval_file $path+"dm_titles.rb"; rec_mode = $m;
@@ -76,7 +81,7 @@ eval_file $path+"dm10_dark_kick.rb"
 
 
 $s = 11; eval_file $path+"dm_titles.rb"
-eval_file $path+"dm11_I_own_U_v05.rb"
+eval_file $path+"dm11_I_own_U_v05.rb" # TODO: Movie
 
 # even in album mode: we need to call "dm_titles.rb" once again due dm_wav_cut.sh is always written afterwards
 $s = 12; eval_file $path+"dm_titles.rb"

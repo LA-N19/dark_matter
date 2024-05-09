@@ -30,7 +30,7 @@ out, out_head = [tit], []; @algX=0;  @alg_ = "";
 @algs += [""]*(10-@algs.length)
 # use_synth :blade
 #use_synth :hollow
-exp = 6; len = 2**exp; @len = len
+exp = 7; len = 2**exp; @len = len
 
 def get_array(var, yrange: (0..8), xrange: (0..(@len-1)), c: 0)
   #xrange = (0..@len) if not xrange
@@ -65,17 +65,23 @@ def get_display(mod, c)
   return val
 end
 
-def add_val2dis(val, c, len)
+def add_val2dis(val, c, len, li: nil, re: nil)
   out_dis = []
   val.each_with_index { |v,ix|
     if ix < 10 then
-      out_dis += [ " "+@n[ix].to_s.rjust(3, ".")+" "+(c%2**(ix+1)).to_s.rjust(3)+"  "+((c/2**(ix+1))%2).to_s+"   " +ix.to_s(36)+
-                   " | "+v.ljust(len) +" | " + (ix+10).to_s(36) + " "+(c/2**(ix+1)).to_s.rjust(3)+" "+@n[ix+10].to_s.rjust(3) ]
+      l = (li == nil ? " "+@n[ix].to_s.rjust(3, ".")+" "+(c%2**(ix+1)).to_s.rjust(3)+"  "+((c/2**(ix+1))%2).to_s+"   "+ix.to_s(36) + " | " : li)
+      r = (re == nil ? (ix+10).to_s(36) + " "+(c/2**(ix+1)).to_s.rjust(3)+" "+@n[ix+10].to_s.rjust(3) : re)
+      out_dis += [ l + v.ljust(len) +" | " + r ]
     else
       out_dis += [ "              "+(ix < 10 ? ix : ix+22).to_s(36)+" | "+ v.ljust(len) +" | " + (ix+10).to_s(36) + " n" ]
     end
   }
   return out_dis
+end
+
+
+def add_val2dis2(val, c, len, li: "", re: "")
+  return val.map { |v|  li + v.ljust(len) + " | " + re   }
 end
 
 
@@ -123,29 +129,13 @@ live_loop :dimod_seq do
   }
   
   val = [ "" ]
-  add_last = 1
-  if mod=="bit" then
-    val = (0..8).map { |e| [ (0..(len-1)).map { |ca| (ca/(2**e)) % 2 == 1 ? "*" : " " }].join("") }
-    val = get_array("b0")
-    val += get_array("*", c: c.to_i )
-  end
-  val_bit = (0..8).map { |e| [ (0..(len-1)).map { |ca| (ca/(2**e)) % 2 == 1 ? "*" : " " }].join("") }
-  val_bit = get_array("b0")
-  val_bit += get_array("*", c: c.to_i )
-  
-  "
-    # val += (1..4).map { |e| [ (0..(len-1)).map { |ca| xx=(ca % (2**e)).to_s(36); xx == '0' ? " " : xx  }].join("") }
-    val = get_array('c0h,c0,ca,cah', yrange: (0..4), c: c)
-    val += (5..8).map { |k| v=2**k;
-      'c%s=c%%%03d=%3d  c%s=c/%03d=%3d %s' %
-      [k, v, c%v, (k+10).to_s(32), v, c/v, '*'*((c%v)*32/v) ]
-    }
-    #val += [ (+" "*(c%len+1)+'*') ]
-
-    val += [ 'clo2:c=%03d' % c ]
-    add_last = 0
-  end
-  "
+  add_last = 0
+  val_bit = (0..6).map { |e| " bit b"+e.to_s+"="+(c/(2**e) % 2).to_s + " | " +  [(0..(len-1)).map { |ca| (ca/(2**e)) % 2 == 1 ? "*" : " " }].join("") }
+  #val_bit = get_array("b0")
+  val_bit += ["          | "+ " "*(c % len)+"*"]
+  val_bit += (0..4).map { |e| " clo c"+e.to_s+"="+(c % (2**(e+1))).to_s(36) + " | " +  [(0..(len-1)).map { |ca| (ca % (2**(e+1))) == 0 ? " " : (ca % (2**(e+1))).to_s(36) }].join("") }
+  val_bit += ["          | "+ " "*(c % len)+"*"]
+  val_bit += (1..6).map { |e| " clo c"+(e+10).to_s(36)+"="+((c / (2**e)) % 64).to_s.ljust(2) + "| " +  [(0..(len-1)).map { |ca| (ca / (2**(e+1))) == 0 ? " " : (ca / (2**(e+1))).to_s(36) }].join("") }
   if mod=='clo2' then
     val = get_display(mod, c)
     val += [ 'clo2:c=%03d' % c ]
@@ -159,10 +149,8 @@ live_loop :dimod_seq do
     [k, v, c/v, (k+10).to_s(32), v, c%v, "*"*((c%v)*32/v) ]
   }
   
-  if mod=="alg" then
-    val, add_last = @algs.map { |v| v }, 0
-  end
-  
+  val_alg = @algs.each_with_index.map { |v,i| " alg a"+i.to_s+"   | "+v }
+  val_alg += ["      exe | alg %d: %s" % [@algX, @alg_]]
   #val += [ mod+mod_c+": "+evals[(mod+mod_c).to_sym]] if add_last == 1
   #val += [ mod+mod_c+("(%d): " % [@algX])+@alg_]  if add_last == 2
   #val += [ "exe%d: %s" % [@algX,@alg_] ]
@@ -185,10 +173,12 @@ live_loop :dimod_seq do
   ########################################################################
   # out_dis - display
   ########################################################################
-  out_dis = [ " n[] c[] b[]  i  "+tit.center(len+2,'_')+"  i  c[] n[]   "]
-  out_dis += add_val2dis(val_clo, c, len)
-  out_dis += add_val2dis(val_bit, c, len)
-  out_dis += [ " not clo bit  i |_"+"_"*len+"_|"]
+  #out_dis = [ " n[] c[] b[]  i  "+tit.center(len+2,'_')+"  i  c[] n[]   "]
+  out_dis = [ "           "+tit.center(len+2,'_')+"   "]
+  #out_dis += add_val2dis(val_clo, c, len)
+  out_dis += add_val2dis2(val_bit, c, len+12)
+  out_dis += add_val2dis2(val_alg, c, len+12)
+  out_dis += [ "          |_"+"_"*len+"_|"]
   
   out = out_dis
   out_debug = [ "mod "+mod+mod_c  ]
