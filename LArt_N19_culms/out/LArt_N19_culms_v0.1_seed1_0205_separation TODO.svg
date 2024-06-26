@@ -1,0 +1,15 @@
+<svg width="297mm" height="420mm" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <rect x="10mm" y="10mm" width="277mm" height="400mm" stroke="black" fill="transparent" stroke-width="0.1"/>
+   <rect x="30mm" y="150mm" width="237mm" height="32mm" stroke="black" fill="transparent" stroke-width="0.2"/>
+   <!--<rect x="30mm" y="182mm" width="237mm" height="0mm" stroke="black" fill="transparent" stroke-width="0.2"/-->
+            <!-- fuehrende raketenwissenschafter haben unter leitung von professoren der teilschenbeschleunigung
+                 definiert das kein mm-Angaben in den Paths funktionieren, sondern schwurbelige einheitsfreie 
+                 Angaben, die in SVG und PDF-Export in anderen dimensionen definiert sind.
+                 Ja, ok, es gibt bestimmt eine "Ne, ist doch klar"-Erklaerung: Bitte melden!!!
+                 -->
+  
+  <text x="267mm" y="188mm" text-anchor="end" font-family="Courier New, monospace" font-size="6">
+    separation TODO | seed 1 | L.Art N19 - culms v0.1 | (c) 2024 - L.A.N19
+    </text>
+</svg>
+    

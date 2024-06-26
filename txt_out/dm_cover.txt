@@ -1,0 +1,152 @@
+
+                             _| _  __ |    __  _ _|__|_ _  __  | _    
+    ██          █████       (_|(_| |  |<   |||(_| |_ |_(/_ |    _>              
+    ██         ██   ██      
+    ██         ███████        #001  awakening v0.02          
+    ██         ██   ██        #002  engine room v0.01          
+    ██████ ██  ██   ██ ██     #003  harmony swarm v0.01          
+    _____________________     #004  night train          
+                              #005  pentatiano v0.07          
+    ███    ██  ██  █████      #006  cheater chord invasion v6          
+    ████   ██ ███ ██   ██     #007  bug is raisin v0.3          
+    ██ ██  ██  ██  ██████     #008  hal9k v0.2          
+    ██  ██ ██  ██      ██     #009  dark kick          
+    ██   ████  ██  █████      #010  I own U v0.05          
+                                                                                                                
+                            dark matter's by L.A. N19, (c) 2021-24   
+     
+****************************************************************************************************
+   scene-3 - description of this movie/sound track/project
+****************************************************************************************************
+
+this is a sonic pi project for an lowfi scifi ascii art silent movie called:
+  dark matter(s)
+
+It metaphorize the corona pendamic and the elon musk hype during 2020-2023
+into 2120-2123 where ... Uh, just read the following movie chapters descriptions ;)
+
+Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
+(Support him using patreon or github sponsors, see https://sonic-pi.net/)
+
+you can find the 2 years old version v0.1 you can watch at youtube:
+  https://www.youtube.com/watch?v=COeXdAULNlI&feature=youtu.be
+or the actual sound track on sound cloud:
+  https://soundcloud.com/la_n19/sets/lan19-dark-matters
+even the code can be found on git hub:
+  https://github.com/LA-N19/dark_matter.git
+
+The following scenes has been added to the movie:
+  sleep well night train- https://www.youtube.com/watch?v=tvFBvcd-NZI (with movie)
+  i own u - https://www.youtube.com/watch?v=GyTxcFLzcAc (has no movie yet)
+
+****************************************************************************************************
+   scene-1 - dark matter(s) odessey
+****************************************************************************************************
+
+a lonely travel of humanity onto dark
+
+sonicpi-lowFi/sciFi-movie by L.A. N19 
+
+****************************************************************************************************
+   scene-2 - prelude
+****************************************************************************************************
+
+the earth is almost destroyed by humanity
+and a so-called elite has colonized mars,
+because a pale person said: that would be an outstanding idea.
+
+After a while people thought: what are we supposed to do on mars?
+It is even more uninhabitable and a so-called elite of the elite made their way 
+to the next -hopefully really habitable- exoplanet 'Proxima Centrauri B', 
+but this was also not very habitable and therefore the elite of the elite 
+is now on the to the exoplanet Teegarden b'.
+
+Why? Because the pale A.I. (the same pale guy just transfered to an A.I.) 
+meant that it was a great idea.
+
+But: The pale A.I. just liked the name of the planet.
+
+****************************************************************************************************
+   scene1 - the awakening
+****************************************************************************************************
+
+Whatever the case, on the several years long journey with the giant spaceship 
+C.O.C.K. (Common Odessey Carriage Kollosom),
+which lasts so long that newer spaceships are built in the meantime, 
+which will overtake the spaceship anyway .... 
+something bad happens and the pale A.I. tries to wake-up the passengers.
+
+That's when the story of Dave begins. 
+
+****************************************************************************************************
+   scene2 - engine room
+****************************************************************************************************
+
+Dave has been resuscitated to fix the 
+fusion powered space folding engine 
+and he immediatly got to work and
+hopefully got it fixed.
+
+****************************************************************************************************
+   scene3 - night train
+****************************************************************************************************
+
+after a hard engineer working day dave is very tired,
+but even he's very exosted he could'nt sleep after this hard and long day.
+So he count trains as he know them from historic documentation.
+
+****************************************************************************************************
+   scene4 - harmony swarm
+****************************************************************************************************
+
+the space ship is switched to generous autopilot drive mode 
+and start dancing around asteroids.
+
+SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!!!
+
+****************************************************************************************************
+   scene5 - pentatiano
+****************************************************************************************************
+ 
+meanwhile dave has become boring and lonely and 
+he has started to learn electric piano.
+
+Let's see how far he's come.
+
+****************************************************************************************************
+   scene6 - cheater chord inversion
+****************************************************************************************************
+
+while the journey goes on and on dave found a old lp
+from the intpreter L.A. N19 covering adam cheater
+with the song cheater chord inversion from the early 21th century.
+
+Let's hear how this old songs sound like.
+
+****************************************************************************************************
+   scene7 - bug is growing
+****************************************************************************************************
+
+something is happening... with the pale A.I.
+something is going weird
+
+Dave should look at the computer
+
+****************************************************************************************************
+   scene8 - hal9k
+****************************************************************************************************
+
+the bug is raised and it seems like it will take over the space ship
+and dave tries to bring himself to safety.
+
+****************************************************************************************************
+   scene9 - dark void space folding
+****************************************************************************************************
+
+after dave short-circuit the space folding drive time and space
+began to collapse and got shuffle 
+
+****************************************************************************************************
+   scene10 - I own U
+****************************************************************************************************
+I own U
