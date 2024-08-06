@@ -20,7 +20,7 @@ dm07_de4d_mouse.rb
 dm08_bug_is_raisin_v3.rb
 dm09_hal9k_v2.rb
 dm10_dark_kick.rb
-dm11_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ") } #.rjust(30, "_") } 
+dm11_I_own_U_v05.rb".split("\n").map { |song| song[5..].sub("_v", " v0.").sub(".rb", "").gsub("_", " ") } #.rjust(30, "_") }
 
 # https://ttsmaker.com/
 
@@ -55,34 +55,32 @@ However, just read the following movie chapters descriptions ;)
 Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
 (Support him using patreon or github sponsors, see https://sonic-pi.net/)
 
-You can find the 2 years old version v0.1 you can watch at youtube (missing the 3 chapters):
+You can find the 2 years old version v0.1 you can watch at youtube (missing several chapters):
   https://www.youtube.com/watch?v=COeXdAULNlI&feature=youtu.be
 or the actual sound track on sound cloud:
   https://soundcloud.com/la_n19/sets/lan19-dark-matters
 even the code can be found on git hub:
   https://github.com/LA-N19/dark_matter.git
 
-Corona and digitalision c
-  
 This movie and its sound tracks are all made by myself nearly only using my old PC,
-sonic pi (which is for free; please donate!) and a seldom used Donner dmk25 as midi-instrument.
-My refurbished dmk25 for 70€ is used to get input some melodies, but is only really
+sonic pi (which is for free; please donate!) and a used Donner dmk25 as midi-instrument.
+The refurbished dmk25 for 70€ is used to get input some melodies, but is only really
 used in realtime in the song #011 I own you.
 But it took endless ours to make the sounds you can hear and the movie you can watch.
 
 For the songs there has been programmed the following instruments:
  1. chord knitter: sliding from notes to using several sliding note patterns
     the chord knitter is used in song #004 harmony swarms fixed coded
-    the chord knitter can be played using midi (only the already mentioned dmk25)
- 2. integer ratio harmony definition instrument: 
+    the chord knitter can be played using midi (only used with dmk25 for #011 I own you)
+ 2. integer ratio harmony definition instrument:
     if you know about music theory, perfect harmony is archieved by using frequencies,
-    which has an integer denominator and devisor, thus integer ratio in relation to 
+    which has an integer denominator and devisor, thus integer ratio in relation to
     the played root note.
     This instrument can define a list of interger denominator and devisor to have
     adding those frequenzies to you played note and gives free defined hormonic hightones.
     Good for cinmenatic & ambient pads, wind instrument, bowed string instruments.
     The instruments can be used to blast the frequency band from low to high.
-    Where is ultraharmonic it sounds synthetic and wheirdly a bit cold as it is to 
+    Where is ultraharmonic it sounds synthetic and wheirdly a bit cold as it is to
     harmonic and has not much or even no movement.
     This instrument is used here and there to make a basic ambient background fill.
  3. The dark void kick:
@@ -95,13 +93,13 @@ Thanks for watching and listening.
 It's not ment to be pleasure, but if it is has been totally weird to you: Great!
 
 Furhter: i know that the songs are some time oversteer until the sound clips.
-But I like it! I also used a normalizer instead of an compressor and enjoy the
-really brutal and rough punch and its clipping.
+Sorry for that, but I like it! I also used a normalizer instead of an compressor
+and enjoy the really brutal and rough punch and even the clipping, which comes amongs it.
 """,
   "scene-1": """
 a lonely travel of humanity onto dark
 
-a sonicpi-lowFi/sciFi Silent movie by L.A. N19 
+a sonicpi-lowFi/sciFi Silent movie by L.A. N19
 """,
   "scene-2": """
 the earth is almost destroyed by humanity
@@ -109,29 +107,29 @@ and a so-called elite has colonized mars,
 because a pale person said: that would be an outstanding idea.
 
 After a while people thought: what are we supposed to do on mars?
-It is even more uninhabitable and a so-called elite of the elite made their way 
-to the next -hopefully really habitable- exoplanet 'Proxima Centrauri B', 
-but this was also not very habitable and therefore the elite of the elite 
+It is even more uninhabitable and a so-called elite of the elite made their way
+to the next -hopefully really habitable- exoplanet 'Proxima Centrauri B',
+but this was also not very habitable and therefore the elite of the elite
 is now on the to the exoplanet Teegarden b'.
 
-Why? Because the pale A.I. (the same pale guy just transfered to an A.I.) 
+Why? Because the pale A.I. (the same pale guy just transfered to an A.I.)
 meant that it was a great idea.
 
 But: The pale A.I. just liked the name of the planet.
 """,
 
   "scene1": """
-Whatever the case, on the several years long journey with the giant spaceship 
+Whatever the case, on the several years long journey with the giant spaceship
 C.O.C.K. (Common Odessey Carriage Kollosom),
-which lasts so long that newer spaceships are built in the meantime, 
-which will overtake the spaceship anyway .... 
+which lasts so long that newer spaceships are built in the meantime,
+which will overtake the spaceship anyway ....
 something bad happens and the pale A.I. tries to wake-up the passengers.
 
-That's when the story of Dave begins. 
+That's when the story of Dave begins.
 """,
   "scene2": """
-Dave has been resuscitated to fix the 
-fusion powered space folding engine 
+Dave has been resuscitated to fix the
+fusion powered space folding engine
 and he immediatly got to work and
 hopefully got it fixed.
 """,
@@ -142,19 +140,19 @@ So he count trains as he know them from historic documentation.
 """,
 
   "scene4": """
-The space ship is switched to generous autopilot drive mode 
+The space ship is switched to generous autopilot drive mode
 and start dancing around asteroids.
-  
+
 SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
 """,
 
-"scene5": """ 
-meanwhile dave has become boring and lonely and 
+"scene5": """
+meanwhile dave has become boring and lonely and
 he has started to learn electric piano.
 
 Let's see how far he's come.
 """,
-  "scene6": 
+  "scene6":
 """
 While the journey goes on and on dave found a old lp
 from the intpreter L.A. N19 covering adam cheater
@@ -188,8 +186,8 @@ time and space began to collapse and got shuffled.
 SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
 """,
 "scene11": """
-Hence space is folder and thus all is universe and the universe is all, 
-Dave have to be merged with it's dark matter to get assimillated the universe 
+Hence space is folder and thus all is universe and the universe is all,
+Dave have to be merged with it's dark matter to get assimillated the universe
 to get part of the entirety universe and transcendent omnipresents.
 
 SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
@@ -198,7 +196,7 @@ SORRY, ASCII ART IS NOT PROGRAMMED FOR THIS SCENE!
 
 logos = { "scene2": "
 [o]
-|_| 
+|_|
 "}
 
 
@@ -208,21 +206,21 @@ scene = "scene"+s.to_s
 
 def return_cover(sel, songs2)
   cov = ("
-                             _| _  __ |    __  _ _|__|_ _  __  | _    
-    ██          █████       (_|(_| |  |<   |||(_| |_ |_(/_ |    _>              
-    ██         ██   ██      
-    ██         ███████      
-    ██         ██   ██      
+                             _| _  __ |    __  _ _|__|_ _  __  | _
+    ██          █████       (_|(_| |  |<   |||(_| |_ |_(/_ |    _>
+    ██         ██   ██
+    ██         ███████
+    ██         ██   ██
     ██████ ██  ██   ██ ██
     _____________________
 
-    ███    ██  ██  █████   
-    ████   ██ ███ ██   ██  
-    ██ ██  ██  ██  ██████  
-    ██  ██ ██  ██      ██  
-    ██   ████  ██  █████  
-                                                                                                                
-                            dark matter's by L.A. N19, (c) 2021-24   
+    ███    ██  ██  █████
+    ████   ██ ███ ██   ██
+    ██ ██  ██  ██  ██████
+    ██  ██ ██  ██      ██
+    ██   ████  ██  █████
+
+                            dark matter's by L.A. N19, (c) 2021-24
      ").split("\n")
   songs2.each_with_index { |song,i| cov[i+3] = cov[i+3].ljust(29, " ") + (i==sel ? ">#" : " #")+i.to_s.rjust(3, "0")+(i==sel ? "< " : "  ")+song+" "*10 if i > 0 }
   return cov
@@ -230,19 +228,19 @@ end
 
 
 if $m == 3 then
-  File.open($path+"/txt2wav/text2speach.sh", "w+") { |f| 
+  File.open($path+"/txt2wav/text2speach.sh", "w+") { |f|
   (-4..11).each { |s|
       scene = "scene"+s.to_s
       title = s>0 ? "chapter %2d: %s" % [s, scenes[scene.to_sym]] : scenes[scene.to_sym]
       f.write("espeak \"", title, "\n\n", txt_en[scene.to_sym], "\" -w ", $wsl_path, "txt2wav/", scene, ".wav\n\n\n")
-    } 
+    }
   }
   stop
 end
-    
+
 if $m == 2 then
-  File.open(file+"_cover_text", "w+") { |f| 
-    f.write(return_cover(-100, songs).join("\n")) 
+  File.open(file+"_cover_text", "w+") { |f|
+    f.write(return_cover(-100, songs).join("\n"))
     scenes.each { |k,v|
     sep = "\n"+"*"* 100+"\n"
     f.write(sep, "   ", k, " - ", v, sep, txt_en[k.to_sym])
@@ -270,7 +268,7 @@ if $m == 1 then
       f.write("\neyeD3 --add-image 'dm_cov_back.png:BACK_COVER' "+mp3name)
     }
     $vt=vt
-  end 
+  end
 else
 
 load $path+"../n19v3.rb" # for inst1: the L.A. N19-Instrument-Algorithm
@@ -316,8 +314,8 @@ print("dbg: title: ", s, scene, sce, txt)
     str = [
       [y-1, "-"*sce.length],
       [y, sce],
-      [y+1, "-"*sce.length], 
-    ]	
+      [y+1, "-"*sce.length],
+    ]
 	txt.each_with_index { |e,ii| str.append([y+2+ii, e]) }
     str.each { |y2,s2|
       x2 = 190/2 - s2.length / 2-1
