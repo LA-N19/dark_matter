@@ -1,6 +1,25 @@
 # L.A.N19 - 20241201 - lan19_SonicCalc_v01.rb
 # cd /mnt/d/LA-N19/dark_matter; watch -n 0,2 cat  lan19_modalg_seq01.log
+'
+  constants:
+    c
+    c1
+    C1
+    b1
+    B1
 
+  variables:
+    n1 - note
+    p1 - panning
+    s1 - scale 
+    y1 - synth (actually "syn")
+    a1 - volumne (is actually "a")
+    A1 - attack (NOT IMPLEMENTED YET)
+    D1 - decay (NOT IMPLEMENTED YET)
+    S1 - sustain (NOT IMPLEMENTED YET)
+    R2 - relaise (NOT IMPLEMENTED YET)
+    sam1 - sample (NOT IMPLEMENTED YET)
+'
 "https://www.conrad.de/de/p/joy-it-com-lcd-16x2-display-modul-6-6-cm-2-6-zoll-16-x-4-pixel-passend-fuer-entwicklungskits-arduino-mit-hintergrund-1656369.html?hk=SEM&WT.mc_id=google_pla&gad_source=1&gclid=Cj0KCQiAhomtBhDgARIsABcaYymLDMn9vkgwjU0d27d-DSoPh9FFjKmzPwbuEZD5tPNuMpf97TXLwcAaAhsYEALw_wcB  "
 "https://www.youtube.com/watch?v=6XY9PooMrms&list=PLWNDWPAClRVojCmvkfJQqRusRUnb-bJKb&index=3"
 "https://www.youtube.com/watch?v=JxtX4JIKK4s"
@@ -158,15 +177,15 @@ live_loop :dimod_seq do
   # val[-1] = val[-1][0..32] if val[-1].length > 64
   
   '
-  if mod=="not" then
-    val = [ "c0=%10d" % [c0] ]
-    val += (1..9).map { |k| v=2**k;
-      "c%s=c0/%03d=%3d  c%s=c0%%%03d=%3d %s" %
-      [k, v, eval("c0/(2**"+k.to_s+")"), (k+10).to_s(32), v, c0%v, "*"*((c0%v)*32/v) ]
-    }
-    val += [ mod+mod_c+": "+evals["clo_".to_sym]]
-  end
-  '
+if mod=="not" then
+  val = [ "c0=%10d" % [c0] ]
+  val += (1..9).map { |k| v=2**k;
+    "c%s=c0/%03d=%3d  c%s=c0%%%03d=%3d %s" %
+    [k, v, eval("c0/(2**"+k.to_s+")"), (k+10).to_s(32), v, c0%v, "*"*((c0%v)*32/v) ]
+  }
+  val += [ mod+mod_c+": "+evals["clo_".to_sym]]
+end
+'
   #val ü= out += [["   [alg_]: ["+@alg_.ljust(50)+"]" ], [" "] ]#
   
   
@@ -185,9 +204,9 @@ live_loop :dimod_seq do
   
   #
   '
-  out_help =  "0a [alg]orithm,1b [bit]s & beats,2c [clo]ck,3d [def]inition, 4e [exe]cute,5f [fx]".split(",")
-  out_help +=  " w [swi]ing, g [ear]r, []".split(",")
-  '
+out_help =  "0a [alg]orithm,1b [bit]s & beats,2c [clo]ck,3d [def]inition, 4e [exe]cute,5f [fx]".split(",")
+out_help +=  " w [swi]ing, g [ear]r, []".split(",")
+'
   out_help = [@n.to_s]
   out_help += """Command-Mode:,a1=1 # algo 1 switch on,a1 # toggle algo 1 on/off,A # switch on algo display,a1: # edit algorithm one""".split(",")
   

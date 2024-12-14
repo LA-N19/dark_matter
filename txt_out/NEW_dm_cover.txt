@@ -43,14 +43,13 @@ taking over, fear of the future, Mars. Weird film about a weird time.
 
 dark matter(s) odessey - a lonely travel of humanity onto dark
 
-sonicpi-lowFi/sciFi-movie by L.A. N19 
+a sonicpi-lowFi/sciFi-movie by L.A. N19 
 
 ****************************************************************************************************
    prelude
 ****************************************************************************************************
 
-the earth is almost destroyed by humanity
-and a so-called elite has colonized mars,
+The earth is almost destroyed by humanity and a so-called elite has colonized mars,
 because a pale person said: that would be an outstanding idea.
 
 After a while people thought: what are we supposed to do on mars?
@@ -89,8 +88,8 @@ hopefully got it fixed.
    scene3 - night train
 ****************************************************************************************************
 
-after a hard engineer working day dave is very tired,
-but even he's very exosted he could'nt sleep after this hard and long day.
+After a hard engineer working day dave is very tired, but even he's very exosted he could'nt sleep 
+after this hard and long day.
 So he count trains as he know them from historic documentation.
 
 ****************************************************************************************************
@@ -135,28 +134,84 @@ Dave should look at the computer
 ****************************************************************************************************
 
 The bug in hal9k is raised and it seems like it will take over the space ship.
-Therefore hal9k s
-and dave tries to bring himself to safety.
+Therefore hal9k is awakening a service robot to kill dave, who tries to bring himself 
+to safety.
 
 ****************************************************************************************************
    scene10 - dark void space folding
 ****************************************************************************************************
-
-After dave short-circuit the space folding drive time and space began to collapse and got shuffled.
+After dave short-circuit the space folding drive time engine to kill hal9k: 
+Space began to collapse and got shuffled.
 
 ****************************************************************************************************
    scene11 - I own U
 ****************************************************************************************************
-I own U
+Hence space is foldet and thus all is universe and the universe is all,
+Dave have to be merged with it's dark matter to get assimillated by the universe
+to get part of the entirety universe and transcendent omnipresents.
 
-
-
+****************************************************************************************************
+   making of / thanks and references
+****************************************************************************************************
 Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
   (Support him using patreon or github sponsors, see https://sonic-pi.net/)
+  
+Movie, Songs, scene titles, CD-Cover. Everthing is created by running the main programm with
+different parameter. 
+The possibilities and implementation methods are limited and extremely complex, hopefully producing 
+a unique sound and film that hopefully someone will like.
 
-You can find the 2 years old version v0.1 you can watch at youtube:
+You can find the 2 years old version v0.1 (without scene 3 and 11) you can watch at youtube:
   https://www.youtube.com/watch?v=GyTxcFLzcAc
+  (scene 3 - the night train you can find seperatly: https://www.youtube.com/watch?v=tvFBvcd-NZI)
 or the actual sound track on sound cloud:
   https://soundcloud.com/la_n19/sets/lan19-dark-matters
 even the code can be found on git hub:
   https://github.com/LA-N19/dark_matter.git
+
+This movie and its sound tracks are all made by myself almost only using my old PC,
+sonic pi (which is for free; please donate!) and a used Donner dmk25 as midi-instrument.
+The refurbished dmk25 for 70€ is used to input some melodies, but is only really used in 
+realtime in the song #011 I own you.
+
+It took endless hours to make the sounds you can hear and the movie you can watch.
+
+Only for this album there has been programmed the following instruments:
+
+ 1. Chord knitter: sliding from notes to using several sliding note patterns
+    the chord knitter is used in song #004 harmony swarms fixed coded
+    the chord knitter can be played using midi (only used with dmk25) and
+    has been used for #011 I own you. 
+	
+ 2. Integer ratio harmony definition instrument:
+    if you know about music theory, perfect harmony is archieved by using frequencies,
+    which has an integer denominator and devisor, thus integer ratio in relation to
+    the played root note.
+    This instrument can define a list of interger denominator and devisor to have
+    adding those frequenzies to you played note and gives free defined hormonic hightones.
+    Good for cinmenatic & ambient pads, wind instrument, bowed string instruments.
+    The instruments can be used to blast the frequency band from low to high.
+    Where is ultraharmonic it sounds synthetic and wheirdly a bit cold as it is to
+    harmonic and has not much or even no movement.
+    This instrument is used here and there to make a basic ambient background fill.
+	
+ 3. The dark void kick:
+    The dark void kick is only used in the song #010, which is all about this kick.
+    The kick is programmed starting at a sine wave and simulate a kick as it should be.
+    The kick is sometimes only played 'wet' (if you are into sound synthesis: you'll know ;)).
+  
+ 4. The melody generator:
+    In #03 the night train (see https://www.youtube.com/watch?v=tvFBvcd-NZI))
+	there are pentatonik melodies generated: one keeps identical as a hook melody,
+	second has random generated and third is crossed of both going endless in this
+	loop served with an hanging beat as a endless sleep well song.
+
+  5. and others i already forgotten
+    
+If you get that far: I really appreciate py you've been that interested!
+Thanks for reading, listening and mey watching.
+It's not ment to be pleasure, but if it is has been totally weird to you: Great!
+
+Further: i know that the songs are some time oversteer until the sound clips.
+Sorry for that, but I like it! I also used a normalizer instead of an compressor
+and enjoy the really brutal and rough punch and even the clipping, which comes amongs it.

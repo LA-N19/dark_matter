@@ -50,7 +50,7 @@ this is a sonic pi project for an lowfi scifi ascii art silent movie called:
 It metaphorize the corona pendamic and the elon musk hype during in the early 2020s
 into the early 2120s.
 
-However, just read the following movie chapters descriptions ;)
+However, just read the following movie chapters descriptions.
 
 Movie and songs are made with sonic pi, thus: Huge thanks to Sam Aaron!!!
 (Support him using patreon or github sponsors, see https://sonic-pi.net/)
@@ -64,7 +64,7 @@ even the code can be found on git hub:
 
 This movie and its sound tracks are all made by myself nearly only using my old PC,
 sonic pi (which is for free; please donate!) and a used Donner dmk25 as midi-instrument.
-The refurbished dmk25 for 70€ is used to get input some melodies, but is only really
+The refurbished dmk25 for 70€ is used to input some melodies, but is only really
 used in realtime in the song #011 I own you.
 But it took endless ours to make the sounds you can hear and the movie you can watch.
 
